@@ -18,6 +18,7 @@ def plot(img, title, save=os.getenv("SCRIPT_SAVE_IMG") is not None, show=False):
 		cv2.imwrite(f'Figūras/{ title }.jpg', img)
 		return
 
+	plt.figure()
 	plt.imshow(img)
 
 	plt.title(title)
