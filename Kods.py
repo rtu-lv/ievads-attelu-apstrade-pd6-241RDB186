@@ -12,7 +12,7 @@ def read(path):
 	cv2.cvtColor(img, cv2.COLOR_BGR2RGB, dst=img)
 	return img
 
-def plot(img, title=None, save=os.getenv("SCRIPT_SAVE_IMG") is not None, show=False):
+def plot(img, title, *, save=os.getenv("SCRIPT_SAVE_IMG") is not None, show=False):
 	if save:
 		cv2.cvtColor(img, cv2.COLOR_RGB2BGR, dst=img)
 		cv2.imwrite(f'Figūras/{ title }.jpg', img)
@@ -47,8 +47,8 @@ A = read('Bildes/Vilciens.jpg')
 plot(A, 'Vilciens', save=False)
 
 B = otsu_thresh(A)
-plot(B)
+plot(B, 'Vilciens - Otsu segmentācija')
 
 B = morph_open(B, kernel=5)
-plot(B, show=True)
+plot(B, 'Vilciens - Otsu segmentācija - Morfoloģiskā atveršana', show=True)
 
