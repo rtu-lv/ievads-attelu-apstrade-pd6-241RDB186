@@ -19,7 +19,7 @@ def plot(img, title, save=os.getenv("SCRIPT_SAVE_IMG") is not None, show=False):
 		return
 
 	plt.figure()
-	plt.imshow(img)
+	plt.imshow(img, cmap='grey')
 
 	plt.title(title)
 	plt.axis(False)
