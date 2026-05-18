@@ -116,7 +116,7 @@ plot(log, 'Telefona kabīne - Globālā logaritmiskā korekcija', show=True)
 
 img = read(f'Bildes/Vilciens.jpg')
 
-img, blur, clust, orig = improve_contrast(img, norm=2)
+img, blur, clust, orig = improve_contrast(img, norm=2.5)
 plot(orig, 'Vilciens', save=False)
 plot(clust, 'Vilciens - K-Means')
 plot(blur, 'Vilciens - K-Means Gausa filtrs')
